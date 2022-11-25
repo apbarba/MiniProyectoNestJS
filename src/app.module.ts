@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Monumentos } from './monuments/entities/monuments.entity';
 import { MonumentsController } from './monuments/monuments.controller';
+import { MonumentsModule } from './monuments/monuments.module';
 import { MonumentsService } from './monuments/monuments.service';
 import { Monuments } from './monuments/monuments/monuments';
 
@@ -10,12 +11,13 @@ import { Monuments } from './monuments/monuments/monuments';
     type: 'postgres',
     host: 'localhost',
     port: 5432,
-    username 'admin',
+    username :'admin',
     password: 'admin',
     database: 'NEST_DB',
     entities: [Monumentos],
     synchronize: true
   }),
+    MonumentsModule
 ],
   controllers: [MonumentsController],
   providers: [Monuments, MonumentsService],
