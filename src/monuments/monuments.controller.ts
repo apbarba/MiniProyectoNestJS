@@ -40,7 +40,7 @@ export class MonumentsController {
     }
 
     @Post()
-    createMonuments(@Body() monuments: monument){
+    createMonuments(@Body() monuments: monument){a
 
         console.log(monuments);
 
